@@ -15,14 +15,14 @@ public class Ejecuta {
         try {
             //crear el proceso hijo con el comando y sus argumentos
             ProcessBuilder pb = new ProcessBuilder(args);
-            pb.redirectErrorStream(true); // mezcla salida de error con la estándar
+            pb.redirectErrorStream(true); //mezcla salida de error con la estandar
 
             System.out.println("Ejecutando comando: " + String.join(" ", args));
 
             //iniciar el proceso
             Process proceso = pb.start();
 
-            // Leer la salida del proceso hijo
+            //leer la salida del proceso hijo
             BufferedReader reader = new BufferedReader(
                     new InputStreamReader(proceso.getInputStream())
             );
@@ -36,14 +36,16 @@ public class Ejecuta {
 
             //informar del resultado
             if (exitCode == 0) {
-                System.out.println("\nEl comando se ejecutó correctamente (código 0).");
+                System.out.println("\nEl comando se ha ejecutado correctamente");
             } else {
-                System.err.println("\nError: el comando terminó con código " + exitCode);
+                System.err.println("\nError: el comando terminó con codigo " + exitCode);
             }
 
         } catch (Exception e) {
-            System.err.println("❌ Error al ejecutar el comando: " + Arrays.toString(args));
+            System.err.println("Error al ejecutar el comando: " + Arrays.toString(args));
             e.printStackTrace();
         }
     }
 }
+
+
