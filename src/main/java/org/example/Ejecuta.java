@@ -42,7 +42,7 @@ public class Ejecuta {
             }
 
         } catch (Exception e) {
-            System.err.println("❌ Error al ejecutar el comando: " + Arrays.toString(args));
+            System.err.println("Error al ejecutar el comando: " + Arrays.toString(args));
             e.printStackTrace();
         }
     }
